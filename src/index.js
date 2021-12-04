@@ -13,9 +13,8 @@ class NewsApiService {
 
     async fetchImages() {
     try {
-        const response = await axios.get(`${BASE_URL}?key=${API_KEY}&q=${this.query}&image_type=photo&orientation=horizontal&safesearch=true$page=${this.page}`);
+        const response = await axios.get(`${BASE_URL}?key=${API_KEY}&q=${this.query}&image_type=photo&orientation=horizontal&safesearch=true&page=${this.page}`);
         this.incrementPage();
-        console.log(`${BASE_URL}?key=${API_KEY}&q=${this.query}&image_type=photo&orientation=horizontal&safesearch=true$page=${this.page}&per_page=${PER_PAGE}`);
         return response.data;
     }
     catch (error) { onFetchError }
